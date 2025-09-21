@@ -1,0 +1,147 @@
+
+  :root{
+    --card-bg: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    --accentA: #ff8a65;
+    --accentB: #ffd166;
+    --glass-border: rgba(255,255,255,0.15);
+  }
+
+  .bday-box{
+    width: 85%;
+    max-width: 980px;
+    margin: 28px auto;
+    padding: 28px 34px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+
+    border: 1px solid var(--glass-border);
+    box-shadow:
+      0 10px 30px rgba(12,18,30,0.18),
+      inset 0 1px 0 rgba(255,255,255,0.02);
+    
+    position: relative;
+    overflow: visible;
+    color: #fcfcff;
+    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+  
+
+.bday-box:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2); 
+}
+  .bday-box .badge{
+    position: absolute;
+    top: -18px;
+    right: 22px;
+    background: linear-gradient(180deg,var(--accentA),var(--accentB));
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 22px;
+    box-shadow: 0 6px 18px rgba(255,138,101,0.18);
+    transform: translateX(20px) rotate(-12deg);
+    transition: all 0.5s ease;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+.bday-box .badge:hover {
+  transform: scale(1.1);
+}
+  .bday-box .title{
+    margin: 6px 0 10px 0;
+    font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -0.3px;
+    font-weight: 800;
+    font-family: "Dancing Script", "Montserrat", cursive;
+    color: #fffdf8;
+    text-shadow: 0 6px 22px rgba(0,0,0,0.45);
+  }
+
+ .bday-box .message {
+  
+  font-size: 16px;
+  font-family: 'Gabriela', sans-serif;
+  color: whitesmoke;
+   
+   font-weight: 200;
+  font-variant: small-caps;
+}
+
+
+.bday-box .message .highlight {
+  color: #ffdd57;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ffdd57aa;
+}
+  
+  .bday-box::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,138,101,0.95), rgba(255,209,102,0.95));
+    box-shadow: 0 6px 20px rgba(255,138,101,0.12);
+  }
+
+  
+  .confetti{
+    position: absolute;
+    left: 18px;
+    bottom: -10px;
+    width: calc(100% - 36px);
+    height: 90px;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .confetti span{
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    border-radius: 2px;
+    opacity: 0.95;
+    transform-origin: center;
+    animation: confetti-fall 3200ms linear infinite;
+  }
+  .confetti span:nth-child(1){ left: 6%; background: #ffd166; animation-delay: 0ms; animation-duration: 3000ms; transform: rotate(15deg); }
+  .confetti span:nth-child(2){ left: 18%; background: #4cc9f0; animation-delay: 200ms; animation-duration: 3300ms; transform: rotate(-8deg); }
+  .confetti span:nth-child(3){ left: 32%; background: #ff8a65; animation-delay: 120ms; animation-duration: 2800ms; transform: rotate(22deg); }
+  .confetti span:nth-child(4){ left: 50%; background: #7fdbca; animation-delay: 340ms; animation-duration: 3500ms; transform: rotate(-30deg); }
+  .confetti span:nth-child(5){ left: 68%; background: #ffd166; animation-delay: 80ms; animation-duration: 3100ms; transform: rotate(6deg); }
+  .confetti span:nth-child(6){ left: 84%; background: #ff6bcb; animation-delay: 260ms; animation-duration: 3600ms; transform: rotate(-12deg); }
+
+  @keyframes confetti-fall{
+    0%{
+      transform: translateY(-40px) rotate(0deg) scale(1);
+      opacity: 0;
+    }
+    8%{
+      opacity: 1;
+    }
+    60%{
+      transform: translateY(36px) rotate(180deg) scale(0.95);
+    }
+    100%{
+      transform: translateY(140px) rotate(360deg) scale(0.8);
+      opacity: 0;
+    }
+  }
+
+ 
+  @media (max-width:560px){
+    .bday-box{ padding:22px; border-radius:14px; }
+    .bday-box .title{ font-size:24px; }
+    .bday-box .message{ font-size:15px; max-width:100%; }
+    .bday-box .badge{ right: 12px; top: -14px; width:48px; height:48px; }
+  }
