@@ -17,7 +17,7 @@ A simple and special **Happy Birthday Website** made with ❤️ for my friend.
 ## 🌐 Live Demo  
 
 <p align="center">
-  <a href="https://madan-kumar.vercel.app">
+  <a href="https://itz-murali.github.io/Happy-Birthday-Muni/">
     <img src="https://img.shields.io/badge/🚀%20Live%20Demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
   </a>
 </p>
