@@ -1,54 +1,111 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Happy Birthay</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Css/2.css"/>
+  <link rel="stylesheet" href="Css/1.css"/>
+  <link rel="stylesheet" href="Css/footer.css"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="gradient"></div>  	
   
-  <div class="image-container">
-    <img src="img/banner.png" alt="Centered Image">
+  <canvas id="c"></canvas>
+
+  <div class="container">
+    <img src="img/banner.png" alt="Birthday banner" class="banner" />
+    <img src="img/user.png" alt="User" class="centered-img" />
+
+    <div class="typewrap" aria-live="polite">
+      <span id="typewriter"></span><span class="typewriter-cursor" aria-hidden="true"></span>
+    </div>
   </div>
-  <div class="text-container">
-     <div class="BirthDayText">
-       Happy BirthDay
-     </div>
-  </div> 
-  <div class="user-img">
-    <img src="img/user.png" alt="">
+
+  <div class="bday-box">
+    <div class="badge">❤️</div>
+    <h1 class="title">Hey, Munikrishna</h1>
+    <p class="message">
+      hi, im <strong>murali</strong> 🍂<br>
+      wishing you a very <span class="highlight">happy birthday 🎉</span><br>
+      ive created something special just for you scroll down and enjoy the surprises! 🍁<br>
+      may your day be filled with happiness, laughter, and sweet memories 🌺
+    </p>
+
+    <div class="confetti">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
   </div>
-  <div class="glitch" data-glitch="MuniKrishna">MuniKrishna</div>
-  <div class="birthdaycard">
 
-<div class="cardfront">
-<h3 class="happy">Happy Birthday!</h3>
+  <img src="img/cake.svg" alt="Cake" class="cake-img"/>
 
-<div class="balloons">
+  <div class="moment-txt">View Our Old Memories</div>
 
-<div class="balloon1"></div>
+  <div class="gallery-stage">
+    <div id="cube" class="cube">
+      <div class="face face1" style="background-image:url('img/1.jpg')"></div>
+      <div class="face face2" style="background-image:url('img/2.jpg')"></div>
+      <div class="face face3" style="background-image:url('img/3.jpg')"></div>
+      <div class="face face4" style="background-image:url('img/4.jpg')"></div>
+    </div>
+  </div>
 
-<div class="balloon2"></div>
+  <div class="gallery-ui">
+    <button id="prevImg" aria-label="Previous photo">◀</button>
+    <button id="nextImg" aria-label="Next photo">▶</button>
+  </div>
 
-<div class="balloon3"></div>
+  <div class="moment-txt">Final Message</div>
 
-<div class="balloon4"></div>
+  <div class="card-container" id="cardContainer">
+    <div class="card" id="card">
+      <div class="card-side front">
+        <div class="top-text">
+          <h1>Happy Birthday</h1>
+          <h3>Click The Below Button To Open this Card</h3>
+        </div>
+        <div class="center-image">
+          <img src="https://media.giphy.com/media/YKUvclrGYmDKXwtphf/giphy.gif" alt="Cute Image" />
+        </div>
+        <button class="open-button" id="toggleButton">Open Card</button>
+      </div>
 
-</div>
+      <div class="card-side back">
+        <h2>Happy Birthday</h2>
+        <p>
+          may your day be filled with love, laughter, and unforgettable moments.  
+          wishing you all the happiness your heart can hold. enjoy your special day to the fullest!  
+          may this year bring you endless joy, success, and beautiful surprises.  
+          happy birthday celebrate big, smile brighter, and create memories that last forever!  
+        </p>
+      </div>
+    </div>
+  </div>
 
-</div>
+  <div class="birthday-footer">
+    <div class="footer-inner">
+      <div class="footer-text">
+        Thanks for visiting stay awesome 🪔
+        <div class="created-by">Created with magical powers by Murali</div>
+      </div>
+    </div>
+  </div>
 
-<div class="cardinside">
-<h3 class="back">HAPPY BIRTHDAY!</h3>
-<p>Dear MuniKrishna,</p>
-<p>Happy Birthday! I hope your day is filled with lots of love and laughter! May all of your birthday wishes come true!</p>
-<p class="name">Murali...</p>
-</div>
-
-</div>
-
-  
+  <script src="main.js"></script>
+  <script src="background.js"></script>
 </body>
 </html>
+
